@@ -6,6 +6,7 @@ from pydantic import BaseModel, EmailStr, Field
 class RegistrationCreate(BaseModel):
     email: EmailStr
     name: str = Field(min_length=1)
+    country_dialing_code: str | None = Field(default=None, pattern=r"^\+")
     contact: str | None = None
     contributions: list[str] = Field(min_length=1)
     donation_commitment: Decimal | None = Field(default=None, gt=0)

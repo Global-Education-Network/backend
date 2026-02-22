@@ -15,6 +15,7 @@ class Registration(Base):
 
     email = Column(String, unique=True, nullable=False)
     name = Column(String, nullable=False)
+    country_dialing_code = Column(String, nullable=True)
     contact = Column(String, nullable=True)
     contributions = Column(ARRAY(String), nullable=False)
     donation_commitment = Column(Numeric, nullable=True)
