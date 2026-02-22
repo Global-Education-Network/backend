@@ -7,7 +7,7 @@ from gen_backend.schemas import RegistrationCreate
 router = APIRouter()
 
 
-@router.post("/registrations")
+@router.post("/api/registrations")
 async def register(data: RegistrationCreate):
     async with Session() as session:
         registration = await create_registration(session, data)
