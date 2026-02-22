@@ -7,7 +7,7 @@ from gen_backend.databases import create_db_url
 
 if env_db_url := os.environ.get("DATABASE_URL"):
     SYNC_DB_URL = env_db_url
-    DB_URL = env_db_url.replace("postgres://", "postgresql+asyncpg://")
+    DB_URL = env_db_url.replace("postgresql://", "postgresql+asyncpg://").replace("postgres://", "postgresql+asyncpg://")
 else:
     SYNC_DB_URL = create_db_url("GEN_BACKEND_DB", asynchronous=False)
     DB_URL = create_db_url("GEN_BACKEND_DB")
