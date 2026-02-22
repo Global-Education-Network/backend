@@ -12,6 +12,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://global-education-network.onrender.com",
+        "https://global-education-network.vercel.app"
         "http://localhost:8000",
         "http://localhost:5173"
     ],
