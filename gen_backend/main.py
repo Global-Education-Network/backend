@@ -10,7 +10,7 @@ from gen_backend.routes import router
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8000"],
+    allow_origins=["https://gen-backend-v77m.onrender.com", "http://localhost:8000"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
