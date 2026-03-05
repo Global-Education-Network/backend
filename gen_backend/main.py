@@ -14,6 +14,7 @@ app.add_middleware(
         "https://global-education-network.onrender.com",
         "https://global-education-network.vercel.app",
         "https://globaleducationnetwork.no",
+        "https://www.globaleducationnetwork.no",
         "http://localhost:8000",
         "http://localhost:5173",
     ],
