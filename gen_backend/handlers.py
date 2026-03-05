@@ -6,7 +6,9 @@ from gen_backend.databases.gen_backend.models import Registration
 from gen_backend.schemas import RegistrationCreate
 
 
-async def create_registration(session: AsyncSession, data: RegistrationCreate) -> Registration:
+async def create_registration(
+    session: AsyncSession, data: RegistrationCreate
+) -> Registration:
     try:
         registration = Registration(**data.model_dump())
         session.add(registration)
@@ -15,7 +17,9 @@ async def create_registration(session: AsyncSession, data: RegistrationCreate) -
         return registration
     except IntegrityError:
         await session.rollback()
-        raise HTTPException(status_code=409, detail="A registration with this email already exists")
+        raise HTTPException(
+            status_code=409, detail="A registration with this email already exists"
+        )
     except Exception as e:
         await session.rollback()
         raise HTTPException(status_code=500, detail=str(e))
