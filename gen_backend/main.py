@@ -13,6 +13,7 @@ app.add_middleware(
     allow_origins=[
         "https://global-education-network.onrender.com",
         "https://global-education-network.vercel.app",
+        "https://globaleducationnetwork.no",
         "http://localhost:8000",
         "http://localhost:5173",
     ],
