@@ -1,10 +1,15 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Response
 
 from gen_backend.databases.gen_backend import Session
 from gen_backend.handlers import create_registration
 from gen_backend.schemas import RegistrationCreate
 
 router = APIRouter()
+
+
+@router.get("/health", status_code=200)
+async def health():
+    return Response(status_code=200)
 
 
 @router.post("/api/registrations")
